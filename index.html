@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suyog Regmi • Civil Engineering Portfolio</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="certificates/favicon.png">
+    <link rel="icon" type="image/x-icon" href="certificates/favicon.ico">
+    <link rel="apple-touch-icon" href="certificates/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        /* ---------- LIGHT THEME TOKENS ---------- */
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #5b21b6;
+            --primary-glow: rgba(124, 58, 237, 0.25);
+            --secondary: #8b5cf6;
+            --accent: #0d9488;
+            --bg-1: #f8f7ff;
+            --bg-2: #eef2ff;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(124, 58, 237, 0.15);
+            --text: #1e1b3a;
+            --text-soft: #475569;
+            --text-muted: #64748b;
+            --shadow-soft: 0 15px 35px -15px rgba(76, 29, 149, 0.25);
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 20%, var(--bg-2), var(--bg-1) 60%, #ffffff);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(76, 29, 149, 0.08);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            background: linear-gradient(145deg, #7c3aed, #4c1d95);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo img {
+            height: 54px;
+            width: 54px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.92rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 40px;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: rgba(124, 58, 237, 0.35);
+            color: var(--primary-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* ---------- HERO WITH IMAGE BACKGROUND ---------- */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 5rem 1.5rem 6rem;
+            min-height: 88vh;
+            justify-content: center;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.15), rgba(248,247,255,0.55) 100%),
+                url('certificates/hero-bg.jpg') center / cover no-repeat;
+            gap: 1.4rem;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 40px;
+            padding: 2.2rem 2.5rem 2.6rem;
+            max-width: 860px;
+            box-shadow: 0 25px 50px -20px rgba(30, 27, 58, 0.45);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .hero img {
+            width: 220px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+            border: 4px solid rgba(124, 58, 237, 0.7);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3), 0 0 30px rgba(124,58,237,0.25);
+            transition: 0.4s;
+        }
+
+        .hero img:hover {
+            border-radius: 50% 50% 30% 70% / 50% 40% 60% 50%;
+            transform: scale(1.02);
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #4c1d95, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 720px;
+            color: var(--text-soft);
+        }
+
+        .cta-button {
+            background: linear-gradient(145deg, var(--secondary), var(--primary-dark));
+            padding: 0.9rem 2.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 10px 20px -8px rgba(76,29,149,0.5);
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 18px 28px -8px rgba(76,29,149,0.6);
+        }
+
+        /* ---------- SECTION TITLES ---------- */
+        .section-title {
+            font-size: 2.7rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(145deg, #1e1b3a, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            grid-column: 1 / -1;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), transparent);
+            margin: 0.7rem auto 0;
+            border-radius: 10px;
+        }
+
+        /* ---------- CARD GRIDS ---------- */
+        .features, .certificates-grid, .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card, .blog-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            padding: 2rem 1.8rem;
+            box-shadow: var(--shadow-soft);
+            transition: 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover, .blog-card:hover {
+            border-color: var(--primary);
+            background: #ffffff;
+            transform: translateY(-8px);
+            box-shadow: 0 28px 40px -15px rgba(76,29,149,0.35);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, #ede9fe, #ddd6fe);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(124,58,237,0.35);
+        }
+
+        h3 {
+            font-size: 1.65rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .feature-card p, .blog-card p { color: var(--text-soft); }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+            gap: 12px;
+            border-bottom-color: var(--primary);
+        }
+
+        .feature-card img {
+            border-radius: 16px;
+            border: 1px solid #cbd5e1;
+            margin: 1rem 0 0.5rem;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16/11;
+            object-fit: cover;
+        }
+
+        /* ---------- SKILLS ---------- */
+        .skills-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            padding: 3.5rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(124,58,237,0.2);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .skill-item {
+            background: #ffffff;
+            padding: 1.6rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid #ddd6fe;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary);
+            background: #faf5ff;
+            transform: scale(1.05);
+        }
+
+        .skill-item i {
+            font-size: 2.8rem;
+            color: var(--primary);
+        }
+
+        /* ---------- BLOGS ---------- */
+        .blogs-grid { grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+        .blog-card { padding: 1.8rem; }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0.8rem 0 0.5rem;
+        }
+
+        .blog-excerpt { margin: 0.8rem 0; }
+
+        .blog-tag {
+            background: rgba(124,58,237,0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            align-self: flex-start;
+            border: 1px solid rgba(124,58,237,0.3);
+        }
+
+        /* ---------- NEW: SHOWCASE (SURVEY CAMP + SDOF) ---------- */
+        .showcase-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 3rem 2.5rem;
+            margin: 4rem 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .showcase-section .section-title { margin-bottom: 1.2rem; }
+
+        .showcase-intro {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            color: var(--text-soft);
+        }
+
+        .viewer-box {
+            background: #ffffff;
+            border: 2px dashed rgba(124,58,237,0.4);
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 200px;
+        }
+
+        .viewer-box object, .viewer-box iframe {
+            width: 100%;
+            height: 640px;
+            display: block;
+            border: none;
+        }
+
+        #sdofBox iframe { height: auto; aspect-ratio: 16 / 9; }
+
+        .viewer-box video {
+            width: 100%;
+            max-height: 560px;
+            display: block;
+            background: #0f172a;
+            border-radius: 24px;
+        }
+
+        .placeholder {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            color: var(--text-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .placeholder i { font-size: 3.2rem; color: var(--primary); }
+
+        .upload-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .upload-btn {
+            background: linear-gradient(145deg, var(--secondary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+            box-shadow: 0 8px 16px -8px rgba(76,29,149,0.6);
+        }
+
+        .upload-btn:hover { transform: translateY(-3px); }
+
+        .upload-btn.secondary {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border: 1.5px solid var(--primary);
+            text-decoration: none;
+            box-shadow: none;
+        }
+
+        .upload-btn input { display: none; }
+
+        .file-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+        }
+
+        .explain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .explain-card {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 24px;
+            padding: 1.5rem;
+        }
+
+        .explain-card h4 {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .explain-card p, .explain-card li { color: var(--text-soft); font-size: 0.98rem; }
+        .explain-card ul { padding-left: 1.2rem; }
+
+        .eq {
+            display: block;
+            margin: 0.6rem 0;
+            padding: 0.6rem 1rem;
+            background: #ffffff;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        [contenteditable="true"]:focus {
+            outline: 2px dashed var(--primary);
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+
+        /* ---------- ACADEMICS: TABS, SUBSECTIONS, VISUALIZER, CODE ---------- */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            margin: 0 0 2rem;
+        }
+
+        .tab-btn {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border: 1.5px solid rgba(124,58,237,0.35);
+            border-radius: 50px;
+            padding: 0.65rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover { background: #faf5ff; }
+
+        .tab-btn.active {
+            background: linear-gradient(145deg, var(--secondary), var(--primary-dark));
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 8px 16px -8px rgba(76,29,149,0.6);
+        }
+
+        .tabs.sub .tab-btn { font-size: 0.92rem; padding: 0.5rem 1.1rem; }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeReveal 0.5s ease; }
+
+        .subsection {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .course-head { text-align: center; margin-bottom: 1.5rem; }
+        .course-head h3 { margin-bottom: 0.3rem; }
+        .course-head p { color: var(--text-muted); }
+
+        .subsection h4.sub-title {
+            font-size: 1.35rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-text { color: var(--text-soft); margin-bottom: 1.2rem; }
+
+        .video-about {
+            margin-top: 1.5rem;
+            padding: 1.4rem 1.6rem;
+            background: #faf5ff;
+            border-left: 5px solid var(--primary);
+            border-radius: 16px;
+        }
+
+        .video-about h5 { font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem; }
+        .video-about p { color: var(--text-soft); }
+
+        .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+
+        .chip {
+            background: #f5f3ff;
+            border: 1px solid #ddd6fe;
+            color: var(--primary-dark);
+            border-radius: 30px;
+            padding: 0.4rem 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .chip.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .viz-wrap {
+            background: #ffffff;
+            border: 1px solid #e9d5ff;
+            border-radius: 24px;
+            padding: 1rem;
+        }
+
+        #vizCanvas { width: 100%; height: 380px; display: block; }
+
+        .slider-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem 2rem;
+            margin-top: 1.2rem;
+        }
+
+        .slider-row label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .slider-row input[type=range] { width: 100%; accent-color: var(--primary); }
+
+        .readout {
+            margin-top: 1rem;
+            padding: 0.8rem 1.2rem;
+            background: #f5f3ff;
+            border-radius: 14px;
+            color: var(--text);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .viz-note { margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-muted); }
+
+        .code-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .code-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            background: #ede9fe;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            padding: 0.3rem 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .code-box pre {
+            padding: 1.2rem 1.4rem;
+            overflow: auto;
+            max-height: 520px;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #1e293b;
+        }
+
+        .code-box pre, .code-box code { font-family: Consolas, 'Courier New', monospace; }
+
+        /* ---------- FEEDBACK ---------- */
+        .feedback-section {
+            background: linear-gradient(145deg, #ffffff, #f3e8ff);
+            border-radius: 50px;
+            padding: 3rem 2.5rem;
+            margin: 5rem 0 3rem;
+            border: 1px solid rgba(124,58,237,0.3);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feedback-section::before {
+            content: "✍️";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.06;
+            bottom: -30px;
+            right: 10px;
+            transform: rotate(-10deg);
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .form-row { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+
+        .form-group {
+            flex: 1 1 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 40px;
+            padding: 0.9rem 1.5rem;
+            color: var(--text);
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+        }
+
+        .form-group textarea { border-radius: 30px; resize: vertical; }
+
+        .rating-stars {
+            display: flex;
+            gap: 0.6rem;
+            font-size: 1.9rem;
+            color: #cbd5e1;
+            cursor: pointer;
+        }
+
+        .rating-stars i { transition: 0.1s; }
+        .rating-stars i.active { color: #f59e0b; }
+
+        .btn-feedback {
+            background: linear-gradient(145deg, #8b5cf6, #6d28d9);
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 6px 0 #4c1d95;
+            transition: 0.15s;
+            width: fit-content;
+            margin: 0.5rem auto 0;
+            cursor: pointer;
+        }
+
+        .btn-feedback:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #4c1d95; }
+
+        .feedback-message {
+            background: rgba(16, 185, 129, 0.12);
+            padding: 1rem;
+            border-radius: 50px;
+            color: #047857;
+            text-align: center;
+            border: 1px solid #10b981;
+            display: none;
+        }
+
+        .feedback-message.show { display: block; }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #ede9fe;
+            border-top: 1px solid #ddd6fe;
+            padding: 3rem 2rem;
+            color: var(--text-soft);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #6b7280;
+            font-size: 1.9rem;
+            margin: 0 0.7rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-6px) scale(1.2);
+        }
+
+        /* ---------- MOBILE ---------- */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 1.2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-card { padding: 1.5rem; border-radius: 28px; }
+            .section-title { font-size: 2rem; }
+            .showcase-section, .feedback-section, .skills-section { border-radius: 32px; padding: 2rem 1.2rem; }
+            .viewer-box object, .viewer-box iframe { height: 480px; }
+        }
+
+        /* ---------- ANIMATIONS ---------- */
+        .fade-in { animation: fadeReveal 0.7s ease forwards; }
+
+        @keyframes fadeReveal {
+            0% { opacity: 0; transform: translateY(25px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        hr { border: 0.5px solid #ddd6fe; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="certificates/logo.png" alt="Suyog Civil Engineer logo">
+                <span>Suyog Regmi</span>
+            </div>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="#activities"><i class="fas fa-trophy"></i> Activities</a>
+                <a href="#academics"><i class="fas fa-graduation-cap"></i> Academics</a>
+                <a href="#blogs"><i class="fas fa-pen-nib"></i> Blogs</a>
+                <a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a>
+                <a href="#skills"><i class="fas fa-cog"></i> Skills</a>
+                <a href="#feedback"><i class="fas fa-comment-dots"></i> Feedback</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- hero section: full-width image background -->
+    <section class="hero fade-in" id="home">
+        <div class="hero-card">
+            <img src="certificates/myphoto.jpg" alt="Suyog Regmi" style="width: 250px; height: 300px;">
+            <h1>Hi, I'm Suyog Regmi</h1>
+            <p>Aspiring civil engineer • Pulchowk Campus • passionate about resilient infrastructure, BIM, and sustainable design. Building ideas that stand.</p>
+            <a href="certificates/cv.pdf" class="cta-button pulse" target="_blank">View CV <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <main>
+        <!-- education & experience -->
+        <section class="features" id="experience">
+            <h2 class="section-title">Education &amp; Leadership</h2>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Bachelor in Civil Engineering</h3>
+                <p>2024–2028, IOE Pulchowk Campus. Ongoing undergraduate, focus on structures &amp; computation.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-school"></i></div>
+                <h3>Higher Secondary (12th)</h3>
+                <p>2023, Valmiki Shikshya Sadan, Chitwan. GPA: 3.60/4.00</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-school"></i></div>
+                <h3>Secondary (10th)</h3>
+                <p>2021, Little Flower School, Chitwan. GPA: 3.85/4.00</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Executive Member, CESS</h3>
+                <p>2025–Present, Pulchowk Campus. Organizing technical symposiums and workshops.</p>
+            </div>
+        </section>
+
+        <!-- extracurriculars -->
+        <section class="features" id="activities">
+            <h2 class="section-title">Activities &amp; Volunteering</h2>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-table"></i></div>
+                <h3>Shaketable Competition</h3>
+                <p>2025, CESS Pulchowk – seismic table test participant.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-water"></i></div>
+                <h3>Floatcrete Competition</h3>
+                <p>2025, innovative concrete floating design.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+                <h3>AutoCAD Competition</h3>
+                <p>2025, participant, CESS.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Volunteer, Project Nyano</h3>
+                <p>2025, Kathmandu Valley Leo Club – winter clothes distribution.</p>
+            </div>
+        </section>
+
+        <!-- ========= ACADEMIC PROJECTS (parent section with sub-sections) ========= -->
+        <section class="showcase-section" id="academics">
+            <h2 class="section-title">🎓 Academic Projects</h2>
+            <p class="showcase-intro">Selected work from my coursework at IOE Pulchowk Campus. Choose a course to explore its reports, videos and code.</p>
+
+            <!-- level 1: course tabs -->
+            <div class="tabs" data-group="course">
+                <button class="tab-btn active" data-target="course-survey"><i class="fas fa-map-location-dot"></i> Survey Camp</button>
+                <button class="tab-btn" data-target="course-dynamics"><i class="fas fa-wave-square"></i> Structural Dynamics</button>
+            </div>
+
+            <!-- ===== COURSE 1: SURVEY CAMP ===== -->
+            <div class="tab-panel active" id="course-survey" data-group="course">
+                <div class="subsection">
+                    <div class="course-head">
+                        <h3>Survey Camp</h3>
+                        <p>Field surveying report</p>
+                    </div>
+                    <h4 class="sub-title"><i class="fas fa-file-pdf"></i> Survey Camp Report</h4>
+                    <p class="sub-text">This report documents the surveying work carried out during the survey camp: the fieldwork, the instruments used, the data collected, and the calculations and drawings prepared from it. Read it below or open the full PDF.</p>
+
+                    <div class="viewer-box" id="surveyBox">
+                        <div class="placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <h3>Survey camp report not added yet</h3>
+                            <p>Set <b>SURVEY_REPORT_URL</b> at the bottom of this file.</p>
+                        </div>
+                    </div>
+
+                    <div class="upload-row">
+                        <a class="upload-btn" id="surveyOpenBtn" href="#" target="_blank" rel="noopener" style="display:none;">
+                            <i class="fas fa-up-right-from-square"></i> Open full report
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== COURSE 2: STRUCTURAL DYNAMICS ===== -->
+            <div class="tab-panel" id="course-dynamics" data-group="course">
+                <div class="subsection">
+                    <div class="course-head">
+                        <h3>Structural Dynamics</h3>
+                        <p>Single degree of freedom systems and response to harmonic loading</p>
+                    </div>
+
+                    <!-- level 2: sub-section tabs -->
+                    <div class="tabs sub" data-group="dyn">
+                        <button class="tab-btn active" data-target="dyn-video"><i class="fas fa-video"></i> SDOF Video</button>
+                        <button class="tab-btn" data-target="dyn-viz"><i class="fas fa-chart-line"></i> Response Visualizer</button>
+                        <button class="tab-btn" data-target="dyn-code"><i class="fas fa-code"></i> Python Code</button>
+                    </div>
+
+                    <!-- SDOF VIDEO -->
+                    <div class="tab-panel active" id="dyn-video" data-group="dyn">
+                        <h4 class="sub-title"><i class="fas fa-video"></i> SDOF System Demonstration</h4>
+
+                        <div class="viewer-box" id="sdofBox">
+                            <div class="placeholder">
+                                <i class="fas fa-video"></i>
+                                <h3>SDOF video not added yet</h3>
+                                <p>Set <b>SDOF_VIDEO_URL</b> at the bottom of this file.</p>
+                            </div>
+                        </div>
+
+                        <div class="upload-row">
+                            <a class="upload-btn secondary" id="sdofOpenBtn" href="#" target="_blank" rel="noopener" style="display:none;">
+                                <i class="fas fa-up-right-from-square"></i> Open video in new tab
+                            </a>
+                        </div>
+
+                        <!-- ✏️ EDIT THIS PARAGRAPH to match what your video shows -->
+                        <div class="video-about">
+                            <h5><i class="fas fa-align-left"></i> About this video</h5>
+                            <p>This video demonstrates a single degree of freedom (SDOF) system, idealised as a lumped mass supported by a spring and a damper. When the mass is displaced and released, it oscillates at its natural frequency while the damper gradually removes energy, so the amplitude decays over time. The video explains how mass and stiffness set the natural period, how the damping ratio controls how quickly the motion dies out, and why the response grows sharply when the loading frequency approaches the natural frequency of the system (resonance).</p>
+                        </div>
+
+                        <div class="explain-grid">
+                            <div class="explain-card">
+                                <h4><i class="fas fa-circle-info"></i> What is an SDOF system?</h4>
+                                <p>A system whose motion can be described by a single coordinate, such as a lumped mass on a spring and damper, or a one-storey frame idealised as a mass on a flexible column.</p>
+                            </div>
+                            <div class="explain-card">
+                                <h4><i class="fas fa-square-root-variable"></i> Equation of motion</h4>
+                                <span class="eq">m·ü + c·u̇ + k·u = p(t)</span>
+                                <p>Here m is mass, c is damping, k is stiffness, u is displacement and p(t) is the applied force.</p>
+                            </div>
+                            <div class="explain-card">
+                                <h4><i class="fas fa-wave-square"></i> Key properties</h4>
+                                <ul>
+                                    <li>Natural frequency: ωₙ = √(k/m)</li>
+                                    <li>Damping ratio: ξ = c / (2·m·ωₙ)</li>
+                                    <li>Natural period: Tₙ = 2π / ωₙ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESPONSE VISUALIZER -->
+                    <div class="tab-panel" id="dyn-viz" data-group="dyn">
+                        <h4 class="sub-title"><i class="fas fa-chart-line"></i> Response Visualizer</h4>
+                        <p class="sub-text">A damped SDOF system under harmonic loading, plotted against the frequency ratio r = ω / ωₙ. Move the sliders to see how damping changes the response.</p>
+
+                        <div class="chip-row" id="chartChips">
+                            <button class="chip active" data-chart="dmf">Dynamic Magnification Factor</button>
+                            <button class="chip" data-chart="tr">Transmissibility Ratio</button>
+                            <button class="chip" data-chart="ph">Phase Angle</button>
+                        </div>
+
+                        <div class="viz-wrap">
+                            <canvas id="vizCanvas"></canvas>
+                        </div>
+
+                        <div class="slider-grid">
+                            <div class="slider-row">
+                                <label for="xiSlider"><span>Damping ratio ξ</span><span id="xiVal">0.10</span></label>
+                                <input type="range" id="xiSlider" min="0.02" max="1.5" step="0.01" value="0.10">
+                            </div>
+                            <div class="slider-row">
+                                <label for="rSlider"><span>Frequency ratio r = ω/ωₙ</span><span id="rVal">1.00</span></label>
+                                <input type="range" id="rSlider" min="0" max="3" step="0.01" value="1.00">
+                            </div>
+                        </div>
+
+                        <div class="readout" id="vizReadout"></div>
+                        <p class="viz-note" id="vizNote"></p>
+                    </div>
+
+                    <!-- PYTHON CODE -->
+                    <div class="tab-panel" id="dyn-code" data-group="dyn">
+                        <h4 class="sub-title"><i class="fas fa-code"></i> Python Code</h4>
+                        <p class="sub-text">The Python script behind the plots: dynamic magnification factor, transmissibility ratio and phase angle for several damping ratios. Replace it with your own code, or link your repository below.</p>
+
+                        <div class="code-box">
+                            <div class="code-bar">
+                                <span><i class="fab fa-python"></i> sdof_response.py</span>
+                                <button class="copy-btn" id="copyCodeBtn"><i class="far fa-copy"></i> Copy</button>
+                            </div>
+<pre><code id="pyCode">import numpy as np
+import matplotlib.pyplot as plt
+
+# frequency ratio r = w / wn and damping ratios to compare
+r = np.linspace(0, 3, 600)
+damping_ratios = [0.05, 0.1, 0.2, 0.5, 1.0]
+
+
+def dmf(r, xi):
+    """Dynamic magnification factor Rd = u / u_static."""
+    return 1 / np.sqrt((1 - r**2) ** 2 + (2 * xi * r) ** 2)
+
+
+def transmissibility(r, xi):
+    """Transmissibility ratio TR = transmitted force / applied force."""
+    num = np.sqrt(1 + (2 * xi * r) ** 2)
+    den = np.sqrt((1 - r**2) ** 2 + (2 * xi * r) ** 2)
+    return num / den
+
+
+def phase(r, xi):
+    """Phase angle between force and displacement, in degrees."""
+    return np.degrees(np.arctan2(2 * xi * r, 1 - r**2))
+
+
+fig, axes = plt.subplots(1, 3, figsize=(16, 4.8))
+plots = [
+    (dmf, "Dynamic Magnification Factor", "Rd", (0, 5)),
+    (transmissibility, "Transmissibility Ratio", "TR", (0, 5)),
+    (phase, "Phase Angle", "phi (degrees)", (0, 180)),
+]
+
+for ax, (func, title, ylabel, ylim) in zip(axes, plots):
+    for xi in damping_ratios:
+        ax.plot(r, func(r, xi), label=f"xi = {xi}")
+    ax.set_title(title)
+    ax.set_xlabel("Frequency ratio r = w / wn")
+    ax.set_ylabel(ylabel)
+    ax.set_ylim(*ylim)
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+plt.tight_layout()
+plt.show()</code></pre>
+                        </div>
+
+                        <div class="upload-row">
+                            <a class="upload-btn secondary" id="codeRepoBtn" href="#" target="_blank" rel="noopener" style="display:none;">
+                                <i class="fab fa-github"></i> View code on GitHub / Colab
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- blog section -->
+        <section id="blogs" style="margin-top: 2rem;">
+            <h2 class="section-title">✍️ Field Notes &amp; Blogs</h2>
+            <div class="blogs-grid">
+                <article class="blog-card fade-in">
+                    <span class="blog-tag"><i class="fas fa-hard-hat"></i> STRUCTURAL</span>
+                    <h3 style="font-size: 1.8rem; margin-top: 0.5rem;">Why ETABS changed my workflow</h3>
+                    <div class="blog-meta"><span><i class="far fa-calendar"></i> Apr 2025</span> <span><i class="far fa-clock"></i> 5 min read</span></div>
+                    <p class="blog-excerpt">From manual analysis to dynamic simulation – my journey learning CSI ETABS and applying it to a G+3 residential model.</p>
+                    <a href="#" class="project-link">Read more →</a>
+                </article>
+                <article class="blog-card fade-in">
+                    <span class="blog-tag"><i class="fas fa-leaf"></i> SUSTAINABILITY</span>
+                    <h3 style="font-size: 1.8rem; margin-top: 0.5rem;">Floatcrete: Can concrete really float?</h3>
+                    <div class="blog-meta"><span><i class="far fa-calendar"></i> Mar 2025</span> <span><i class="far fa-clock"></i> 4 min read</span></div>
+                    <p class="blog-excerpt">My team developed a lightweight mix using expanded clay. We didn't win but discovered low-density structural possibilities.</p>
+                    <a href="#" class="project-link">Read more →</a>
+                </article>
+                <article class="blog-card fade-in">
+                    <span class="blog-tag"><i class="fas fa-paint-roller"></i> BIM</span>
+                    <h3 style="font-size: 1.8rem; margin-top: 0.5rem;">Revit vs SketchUp for civil</h3>
+                    <div class="blog-meta"><span><i class="far fa-calendar"></i> Feb 2025</span> <span><i class="far fa-clock"></i> 6 min read</span></div>
+                    <p class="blog-excerpt">A comparison based on my small housing project. Both have superpowers – here's how I choose.</p>
+                    <a href="#" class="project-link">Read more →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Certificates Grid -->
+        <section id="certificates">
+            <h2 class="section-title">📜 Certificates</h2>
+            <div class="certificates-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>AutoCAD Competition</h3>
+                    <p>CESS-Nepal, 2025</p>
+                    <img src="certificates/autocad-certificate.jpg" alt="certificate">
+                    <a href="certificates/autocad-certificate.jpg" class="project-link" target="_blank">View Certificate →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>AutoCAD + ETABS Workshop</h3>
+                    <p>CESS-Nepal</p>
+                    <img src="certificates/autocadandetabsworkshop-certificate.jpg" alt="workshop">
+                    <a href="certificates/autocadandetabsworkshop-certificate.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>CSI ETABS Workshop</h3>
+                    <p>CESS-Nepal</p>
+                    <img src="certificates/csietabs-certificate.jpg" alt="etabs">
+                    <a href="certificates/csietabs-certificate.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Floatcrete Competition</h3>
+                    <p>CESS-Nepal</p>
+                    <img src="certificates/floatecrete-certificate.jpg" alt="floatcrete">
+                    <a href="certificates/floatecrete-certificate.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>General Member - Leo</h3>
+                    <p>Kathmandu Valley Leo Club</p>
+                    <img src="certificates/GENERAL MEMBER.jpg" alt="leo member">
+                    <a href="certificates/GENERAL MEMBER.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Project Nyano Volunteer</h3>
+                    <p>Kathmandu Leo Club</p>
+                    <img src="certificates/NYANO.jpg" alt="nyano">
+                    <a href="certificates/NYANO.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Shake Table Competition</h3>
+                    <p>CESS-Nepal</p>
+                    <img src="certificates/SHAKE TABLE.jpg" alt="shake table">
+                    <a href="certificates/SHAKE TABLE.jpg" class="project-link" target="_blank">View →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="skills-section" id="skills">
+            <h2 class="section-title">⚙️ technical toolkit</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-drafting-compass"></i><span>AutoCAD</span></div>
+                <div class="skill-item"><i class="fas fa-building"></i><span>Revit</span></div>
+                <div class="skill-item"><i class="fas fa-cube"></i><span>SketchUp</span></div>
+                <div class="skill-item"><i class="fas fa-code"></i><span>Python (NumPy/Matplotlib)</span></div>
+                <div class="skill-item"><i class="fas fa-chart-bar"></i><span>ETABS</span></div>
+                <div class="skill-item"><i class="fas fa-file-alt"></i><span>LaTeX</span></div>
+            </div>
+        </section>
+
+        <!-- Feedback -->
+        <section id="feedback" class="feedback-section">
+            <h2 style="font-size: 2.6rem; text-align: center; color: var(--primary-dark); margin-bottom: 1.5rem;">💬 drop your feedback</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--text-soft);">I’d love to hear your thoughts — on my portfolio, projects, or just to connect.</p>
+
+            <div class="feedback-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="feedbackName" placeholder="e.g., Alex P.">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="feedbackEmail" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-tag"></i> feedback type</label>
+                    <select id="feedbackType">
+                        <option value="general">💡 General suggestion</option>
+                        <option value="project">🏗️ Project idea</option>
+                        <option value="collab">🤝 Collaboration</option>
+                        <option value="code">🧑‍💻 Website / code</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-star"></i> rate my work</label>
+                    <div class="rating-stars" id="starRating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-pencil-alt"></i> your message</label>
+                    <textarea id="feedbackMessage" rows="4" placeholder="What's on your mind?"></textarea>
+                </div>
+                <button class="btn-feedback" id="submitFeedbackBtn"><i class="fas fa-paper-plane"></i> Send feedback</button>
+                <div id="feedbackSuccessMsg" class="feedback-message">
+                    <i class="fas fa-check-circle"></i> thanks for your feedback! 🚀
+                </div>
+            </div>
+        </section>
+
+        <!-- about me brief -->
+        <section class="interactive-section" id="about" style="background: rgba(255,255,255,0.8); border: 1px solid var(--card-border); border-radius: 40px; padding: 2.5rem; margin-top: 2rem; box-shadow: var(--shadow-soft);">
+            <h2 style="font-size: 2rem; display: flex; gap: 12px; justify-content: center; color: var(--text);"><i class="fas fa-map-pin" style="color: #7c3aed;"></i> About Suyog</h2>
+            <p style="font-size: 1.2rem; color: var(--text-soft); text-align: center;">Interests: Structural Design, BIM, Sustainable Construction. <br> Languages: Nepali (native), English (fluent). Based in Lalitpur, Nepal.</p>
+        </section>
+    </main>
+
+    <!-- footer / contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/suyog.regmi.14" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/suyogregmi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/SuyogRegmi2063" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/suyog-regmi-bb5a5a337" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p><i class="fas fa-phone-alt"></i> +977-9745409609 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> 080bce184@pcampus.edu.np</p>
+        </div>
+    </footer>
+
+    <script>
+        // mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+
+        // star rating
+        let currentRating = 0;
+        const stars = document.querySelectorAll('#starRating i');
+        function paintStars(n) {
+            stars.forEach(s => {
+                const on = Number(s.dataset.rating) <= n;
+                s.classList.toggle('active', on);
+                s.classList.toggle('fas', on);
+                s.classList.toggle('far', !on);
+            });
+        }
+        stars.forEach(s => {
+            s.addEventListener('mouseover', () => paintStars(Number(s.dataset.rating)));
+            s.addEventListener('click', () => { currentRating = Number(s.dataset.rating); paintStars(currentRating); });
+        });
+        document.getElementById('starRating').addEventListener('mouseleave', () => paintStars(currentRating));
+
+        // feedback (front-end only: shows a thank-you message)
+        document.getElementById('submitFeedbackBtn').addEventListener('click', () => {
+            const msg = document.getElementById('feedbackSuccessMsg');
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 4000);
+        });
+
+        // ======================================================
+        //  PASTE YOUR LINKS HERE (keep the quotes)
+        //  PDF: "certificates/Survey_Camp.pdf", a Google Drive share link, or any direct .pdf link
+        //  Video: "certificates/sdof-video.mp4", a YouTube link, a Google Drive share link, or a direct .mp4 link
+        //  Code link: GitHub repo or Google Colab link (optional, leave "" to hide the button)
+        // ======================================================
+        const SURVEY_REPORT_URL = "certificates/Survey_Camp.pdf";
+        const SDOF_VIDEO_URL = "certificates/sdof-video.mp4";
+        const CODE_REPO_URL = "";
+
+        // makes file names with spaces safe in links (leaves already-encoded links alone)
+        function safeUrl(u) { return u.indexOf('%') === -1 ? encodeURI(u) : u; }
+
+        function driveId(url) {
+            const m = url.match(/drive\.google\.com\/file\/d\/([^\/?#]+)/) || url.match(/[?&]id=([^&]+)/);
+            return m ? m[1] : null;
+        }
+
+        function youtubeId(url) {
+            const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+            return m ? m[1] : null;
+        }
+
+        function setEmbed(boxId, src, title) {
+            document.getElementById(boxId).innerHTML =
+                '<iframe src="' + src + '" title="' + title + '" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+        }
+
+        // survey camp report
+        if (SURVEY_REPORT_URL) {
+            const id = driveId(SURVEY_REPORT_URL);
+            setEmbed('surveyBox', id ? 'https://drive.google.com/file/d/' + id + '/preview' : safeUrl(SURVEY_REPORT_URL), 'Survey camp report');
+            const btn = document.getElementById('surveyOpenBtn');
+            btn.href = safeUrl(SURVEY_REPORT_URL);
+            btn.style.display = 'inline-flex';
+        }
+
+        // SDOF video
+        if (SDOF_VIDEO_URL) {
+            const yt = youtubeId(SDOF_VIDEO_URL);
+            const id = driveId(SDOF_VIDEO_URL);
+            if (yt) {
+                setEmbed('sdofBox', 'https://www.youtube.com/embed/' + yt, 'SDOF video');
+            } else if (id) {
+                setEmbed('sdofBox', 'https://drive.google.com/file/d/' + id + '/preview', 'SDOF video');
+            } else {
+                document.getElementById('sdofBox').innerHTML =
+                    '<video controls preload="metadata" src="' + SDOF_VIDEO_URL + '"></video>';
+            }
+            const btn = document.getElementById('sdofOpenBtn');
+            btn.href = SDOF_VIDEO_URL;
+            btn.style.display = 'inline-flex';
+        }
+
+        // code repository button
+        if (CODE_REPO_URL) {
+            const btn = document.getElementById('codeRepoBtn');
+            btn.href = CODE_REPO_URL;
+            btn.style.display = 'inline-flex';
+        }
+
+        // copy code button
+        document.getElementById('copyCodeBtn').addEventListener('click', () => {
+            const btn = document.getElementById('copyCodeBtn');
+            const text = document.getElementById('pyCode').innerText;
+            const done = () => { btn.innerHTML = '<i class="fas fa-check"></i> Copied'; setTimeout(() => btn.innerHTML = '<i class="far fa-copy"></i> Copy', 1800); };
+            if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done); }
+        });
+
+        // ---------- tabs (course level and sub-section level) ----------
+        document.querySelectorAll('.tabs').forEach(tabs => {
+            const group = tabs.dataset.group;
+            tabs.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+                    document.querySelectorAll('.tab-panel[data-group="' + group + '"]').forEach(p => {
+                        p.classList.toggle('active', p.id === btn.dataset.target);
+                    });
+                    drawViz(); // charts need a visible canvas to size correctly
+                });
+            });
+        });
+
+        // ---------- response visualizer ----------
+        const CHARTS = {
+            dmf: {
+                title: 'Dynamic Magnification Factor',
+                ylabel: 'Rd = u / u_static',
+                short: 'Rd',
+                ymax: 5,
+                vline: 1,
+                vlabel: 'r = 1',
+                f: (r, x) => 1 / Math.sqrt(Math.pow(1 - r * r, 2) + Math.pow(2 * x * r, 2)),
+                note: 'Resonance occurs near r = 1. The peak is about 1 / (2ξ√(1 − ξ²)) and it drops quickly as damping increases. For r much greater than 1, Rd tends to zero.'
+            },
+            tr: {
+                title: 'Transmissibility Ratio',
+                ylabel: 'TR',
+                short: 'TR',
+                ymax: 5,
+                vline: Math.SQRT2,
+                vlabel: 'r = √2',
+                f: (r, x) => Math.sqrt(1 + Math.pow(2 * x * r, 2)) / Math.sqrt(Math.pow(1 - r * r, 2) + Math.pow(2 * x * r, 2)),
+                note: 'Isolation works only for r greater than √2, where TR is below 1. Beyond that point, more damping actually increases the transmitted force.'
+            },
+            ph: {
+                title: 'Phase Angle',
+                ylabel: 'φ (degrees)',
+                short: 'φ',
+                ymax: 180,
+                vline: 1,
+                vlabel: 'r = 1',
+                f: (r, x) => Math.atan2(2 * x * r, 1 - r * r) * 180 / Math.PI,
+                note: 'The response lags the force by 0° at low frequency, exactly 90° at resonance (r = 1), and approaches 180° at high frequency.'
+            }
+        };
+
+        const REF_XI = [0.05, 0.1, 0.2, 0.5, 1.0];
+        const REF_COLORS = ['#a78bfa', '#60a5fa', '#34d399', '#fbbf24', '#f87171'];
+        let currentChart = 'dmf';
+
+        const canvas = document.getElementById('vizCanvas');
+        const xiSlider = document.getElementById('xiSlider');
+        const rSlider = document.getElementById('rSlider');
+
+        function drawViz() {
+            const w = canvas.clientWidth;
+            if (!w) return; // panel hidden
+            const h = 380;
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = w * dpr;
+            canvas.height = h * dpr;
+            const ctx = canvas.getContext('2d');
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.clearRect(0, 0, w, h);
+
+            const cfg = CHARTS[currentChart];
+            const xmax = 3;
+            const L = 58, R = 18, T = 38, B = 48;
+            const pw = w - L - R, ph = h - T - B;
+            const X = r => L + (r / xmax) * pw;
+            const Y = v => T + ph * (1 - v / cfg.ymax);
+
+            // title
+            ctx.fillStyle = '#4c1d95';
+            ctx.font = '600 15px Segoe UI, Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(cfg.title, L, 22);
+
+            // grid and tick labels
+            ctx.font = '12px Segoe UI, Arial, sans-serif';
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.fillStyle = '#64748b';
+            ctx.lineWidth = 1;
+            ctx.textAlign = 'center';
+            for (let i = 0; i <= 6; i++) {
+                const r = i * 0.5;
+                ctx.beginPath(); ctx.moveTo(X(r), T); ctx.lineTo(X(r), T + ph); ctx.stroke();
+                ctx.fillText(r.toFixed(1), X(r), T + ph + 18);
+            }
+            ctx.textAlign = 'right';
+            const yStep = cfg.ymax === 180 ? 30 : 1;
+            for (let v = 0; v <= cfg.ymax; v += yStep) {
+                ctx.beginPath(); ctx.moveTo(L, Y(v)); ctx.lineTo(L + pw, Y(v)); ctx.stroke();
+                ctx.fillText(String(v), L - 8, Y(v) + 4);
+            }
+
+            // axes labels
+            ctx.fillStyle = '#334155';
+            ctx.textAlign = 'center';
+            ctx.font = '13px Segoe UI, Arial, sans-serif';
+            ctx.fillText('Frequency ratio r = ω / ωₙ', L + pw / 2, h - 8);
+            ctx.save();
+            ctx.translate(16, T + ph / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText(cfg.ylabel, 0, 0);
+            ctx.restore();
+
+            // curves (clipped to the plot area)
+            ctx.save();
+            ctx.beginPath(); ctx.rect(L, T, pw, ph); ctx.clip();
+
+            // reference vertical line
+            ctx.setLineDash([6, 5]);
+            ctx.strokeStyle = '#94a3b8';
+            ctx.beginPath(); ctx.moveTo(X(cfg.vline), T); ctx.lineTo(X(cfg.vline), T + ph); ctx.stroke();
+            ctx.setLineDash([]);
+
+            const drawCurve = (xi, color, width) => {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = width;
+                ctx.beginPath();
+                const n = 400;
+                for (let i = 0; i <= n; i++) {
+                    const r = (i / n) * xmax;
+                    const x = X(r), y = Y(cfg.f(r, xi));
+                    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            };
+
+            REF_XI.forEach((xi, i) => drawCurve(xi, REF_COLORS[i], 1.4));
+            const xi = parseFloat(xiSlider.value);
+            drawCurve(xi, '#6d28d9', 3.4);
+
+            // marker at selected r
+            const r0 = parseFloat(rSlider.value);
+            const v0 = cfg.f(r0, xi);
+            ctx.strokeStyle = '#6d28d9';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 4]);
+            ctx.beginPath(); ctx.moveTo(X(r0), T); ctx.lineTo(X(r0), T + ph); ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#6d28d9';
+            ctx.beginPath(); ctx.arc(X(r0), Y(Math.min(v0, cfg.ymax)), 6, 0, Math.PI * 2); ctx.fill();
+            ctx.restore();
+
+            // vline label
+            ctx.fillStyle = '#64748b';
+            ctx.font = '12px Segoe UI, Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(cfg.vlabel, X(cfg.vline) + 6, T + 14);
+
+            // legend
+            const lx = L + pw - 120;
+            ctx.font = '12px Segoe UI, Arial, sans-serif';
+            REF_XI.forEach((x, i) => {
+                const ly = T + 14 + i * 16;
+                ctx.fillStyle = REF_COLORS[i];
+                ctx.fillRect(lx, ly - 8, 16, 3);
+                ctx.fillStyle = '#334155';
+                ctx.textAlign = 'left';
+                ctx.fillText('ξ = ' + x, lx + 22, ly - 3);
+            });
+            ctx.fillStyle = '#6d28d9';
+            ctx.fillRect(lx, T + 14 + 5 * 16 - 9, 16, 4);
+            ctx.fillStyle = '#334155';
+            ctx.fillText('ξ = ' + xi.toFixed(2) + ' (yours)', lx + 22, T + 14 + 5 * 16 - 3);
+
+            // readout
+            document.getElementById('xiVal').textContent = xi.toFixed(2);
+            document.getElementById('rVal').textContent = r0.toFixed(2);
+            const unit = currentChart === 'ph' ? '°' : '';
+            document.getElementById('vizReadout').textContent =
+                'ξ = ' + xi.toFixed(2) + ',  r = ' + r0.toFixed(2) + '  →  ' + cfg.short + ' = ' + v0.toFixed(2) + unit;
+            document.getElementById('vizNote').textContent = cfg.note;
+        }
+
+        document.querySelectorAll('#chartChips .chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                currentChart = chip.dataset.chart;
+                document.querySelectorAll('#chartChips .chip').forEach(c => c.classList.toggle('active', c === chip));
+                drawViz();
+            });
+        });
+        xiSlider.addEventListener('input', drawViz);
+        rSlider.addEventListener('input', drawViz);
+        window.addEventListener('resize', drawViz);
+        drawViz();
+    </script>
+</body>
+</html>
